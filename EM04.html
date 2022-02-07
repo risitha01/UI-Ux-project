@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset ="UTF-8">
+<title>PLAN YOUR BIRTHDAY</title>
+</head>
+
+<style>
+
+.contact-box{
+width:500px;
+box-shadow:0 0 20px 0 #999;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+position:absolute;
+}
+
+form{
+margin:35px;
+}
+
+.input-field{
+width:400px;
+height:40px;
+margin-top:20px;
+padding-left:10px;
+padding-right:10px;
+border:1px solid #777;
+border-radius:14px;
+outline:none;
+}
+
+.textarea-field
+{
+height:150px;
+padding-top:10px;
+}
+
+button{
+background-color:lightblue;
+width:30%;
+height:40px;
+margin-left:35%;
+margin-top:5%;
+}
+</style>
+<body>
+<div class="bg-image" 
+     style="background-image: url('14.jpg');
+            height: 100vh">
+</div>
+<div class="contact-box">
+<h4 style = "text-align:center;color:white;font-size:40px;background-color:black;">PLAN YOUR BIRTHDAY</h4>
+<form class="needs-validation" novalidate>
+<p style="color:white;font-size:20px;">Choose you favorite theme birthday</p>
+<input type="radio"  required id="radio" name="theme" value="theme">
+<label for="radio" style="color:white;font-size:20px;">Cartoon Theme </label>
+<input type="radio" required id="radio" name="theme" value="theme">
+<label for="radio"style="color:white;font-size:20px;">Love Theme</label></br>
+<input type="radio" required id="radio" name="theme" value="theme">
+<label for="radio"style="color:white;font-size:20px;">Princess Theme</label>
+<input type="radio" required id="radio" name="theme" value="theme">
+<label for="radio" style="color:white;font-size:20px;">Friends Theme</label>
+
+<input type="username" required class = "input-field" placeholder=" Enter your Full name" id="username" name="name" pattern = "[A-Za-z\s]{1,30}" ></br>
+<input type = "emailid" required class = "input-field" placeholder=" Enter your Email ID"id="emailid" name="email_id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
+<input type="tel" required class = "input-field" placeholder="Enter your contact number" id="tel" name="tel" pattern = "[6-9][0-9]{9}">
+<input type="date" required class = "input-field" placeholder="Enter the date" id="date" name="id">
+
+<div class="col-12">
+    <button class="btn btn-primary" type="submit">SUBMIT</button>
+  </div>
+  
+</form>
+</div>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+		  alert("YOU CAN'T THIS PAGE WITH INVALID DETAILS!");
+        }
+
+
+        form.classList.add('was-validated')
+		if (form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+		  alert("YOUR PLAN IS SUBMMITED OUR TEAM WILL CONTACT YOU!!!");
+        }
+      }, false)
+    })
+})()
+</script>
+</body>
+</html>

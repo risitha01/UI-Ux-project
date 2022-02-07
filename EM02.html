@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset ="UTF-8">
+<title>Feedback form</title>
+</head>
+<script>
+
+
+
+</script>
+<style>
+body{
+background:url(feedback2.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+margin-top:55%;
+font-family:sans-serif;
+}
+
+.contact-box{
+width:500px;
+box-shadow:0 0 20px 0 #999;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+position:absolute;
+}
+
+form{
+margin:35px;
+}
+
+.input-field{
+width:400px;
+height:40px;
+margin-top:20px;
+padding-left:10px;
+padding-right:10px;
+border:1px solid #777;
+border-radius:14px;
+outline:none;
+}
+
+.textarea-field
+{
+height:150px;
+padding-top:10px;
+}
+button{
+height:40px;
+margin-left:40%;
+margin-top:5%;
+background-color:lightblue;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+fieldset {
+  width : 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px blue;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
+</style>
+<body>
+
+
+<div class="contact-box">
+<h4 style = "text-align:center;">FEEDBACK FORM</h4>
+<form class="needs-validation" novalidate>
+<input type="text" required class = "input-field" placeholder=" Enter your Full name" id="username" name="name"  pattern = "[A-Za-z ]{1,30}" >
+<input type = "email" required class = "input-field" placeholder=" Enter your Email ID" id="emailid" name="email_id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
+<textarea type = "textarea" required class = "input-field textarea-field" placeholder = "Your feedback" id="textarea"></textarea>
+<div class="col-12">
+    <button class="btn btn-primary" type="submit">SUBMIT</button>
+  </div>
+  
+</form>
+</div>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+		  alert("YOU CAN'T THIS PAGE WITH INVALID DETAILS");
+        }
+
+
+        form.classList.add('was-validated')
+		if (form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+		  alert("THANK YOU FOR YOUR VALUABLE FEEDBACK!!!");
+        }
+      }, false)
+    })
+})()
+</script>
+</body>
+</html>

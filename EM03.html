@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset ="UTF-8">
+<title>PLAN YOUR WEDDING</title>
+</head>
+<style>
+.contact-box{
+width:500px;
+box-shadow:0 0 20px 0 #999;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+position:absolute;
+}
+
+form{
+margin:35px;
+}
+
+.input-field{
+width:400px;
+height:40px;
+margin-top:20px;
+padding-left:10px;
+padding-right:10px;
+border:1px solid #777;
+border-radius:14px;
+outline:none;
+}
+
+.textarea-field
+{
+height:150px;
+padding-top:10px;
+}
+
+button{
+height:40px;
+margin-left:40%;
+margin-top:5%;
+}
+
+</style>
+<body>
+
+<div class="bg-image" style="background-image: url('wed1.JPG'); height:100vh;">
+</div>
+<div class="contact-box">
+<h4 style = "text-align:center;color:white;font-size:40px;">PLAN YOUR WEDDING</h4>
+<form class="needs-validation" novalidate>
+<p style="color:white;font-size:30px;">Choose you favorite theme wedding</p>
+<input type="radio" id="text" name="theme" value="theme" required>
+<label for="radio" style="color:white;font-size:20px;">Royal Red Theme</label>
+<input type="radio" id="text" name="theme" value="theme" required>
+<label for="radio"style="color:white;font-size:20px;">Beach Theme </label></br>
+<input type="radio" id="text" name="theme" value="theme" required>
+<label for="radio"style="color:white;font-size:20px;">Traditional Theme</label>
+<input type="radio" id="text" name="theme" value="theme" required>
+<label for="radio" style="color:white;font-size:20px;">Green Theme </label>
+
+<input type="username" required class = "input-field" onchange="validname" placeholder=" Enter your Full name" id="username" name="name" pattern = "[A-Za-z ]{1,30}"></br>
+<input name="email" type="email" required="required" class = "input-field" placeholder=" Enter your Email ID"id="emailid"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
+<input type="tel" required class = "input-field" onchange= "validatetel" placeholder="Enter your contact number" id="tel" name="tel" pattern = "[6-9][0-9]{9}">
+<input type="date" required class = "input-field" placeholder="Enter the date" id="date" name="id" >
+</br>
+
+<div class="col-12">
+    <button class="btn btn-primary" type="submit">SUBMIT</button>
+  </div>
+  
+
+</form>
+</div>
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+		  alert("YOU CAN'T THIS PAGE WITH INVALID DETAILS!");
+        }
+
+
+        form.classList.add('was-validated')
+		if (form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+		  alert("YOUR PLAN IS SUBMMITED OUR TEAM WILL CONTACT YOU!!!");
+        }
+      }, false)
+    })
+})()
+</script>
+</body>
+</html>
